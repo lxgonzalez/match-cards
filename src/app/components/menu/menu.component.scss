@@ -1,0 +1,78 @@
+@import "../../../../public/colors.scss";
+
+section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  background-color: $secondary;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > h1 {
+    box-shadow: 16px 0 $primary,
+    -16px 0 $primary,
+    0 (-16px) $primary,
+    0 16px $primary;
+
+    font-size: 3rem;
+    color: white;
+    padding: 2rem;
+    background-color: $background;
+    margin: 30px 0;
+  }
+}
+
+.options {
+  background-color: $primary;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 5rem;
+  span {
+    visibility: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 2.2rem;
+    color: $light;
+    background-color: $primary;
+    cursor: pointer;
+
+    &:hover {
+      color: $tertiary;
+
+      span {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    > h1 {
+      box-shadow: 8px 0 $primary,
+      -8px 0 $primary,
+      0 (-8px) $primary,
+      0 8px $primary;
+      font-size: 1.2rem;
+      padding: 1rem .8rem;
+    }
+  }
+  .options {
+    gap: 6rem;
+    a {
+      font-size: 1.2rem;
+      padding: 0;
+    }
+
+  }
+}

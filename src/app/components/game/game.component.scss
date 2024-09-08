@@ -1,0 +1,124 @@
+@import "../../../../public/colors.scss";
+
+img {
+  width: 100%;
+  box-shadow: 0 0 5px $dark;
+  cursor: pointer
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  color: white;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+header, footer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: $secondary;
+  justify-content: center;
+}
+
+.cards {
+  flex: 7;
+  display: grid;
+  gap: 10px;
+  place-content: center;
+  width: 80%;
+}
+
+//Cards Mode
+.card-easy {
+  grid-template-columns: repeat(6, 100px);
+}
+
+.card-medium {
+  grid-template-columns: repeat(8, 90px);
+}
+
+.card-hard {
+  grid-template-columns: repeat(10, 90px);
+}
+
+footer {
+  font-size: 1.5rem;
+  justify-content: space-around;
+}
+
+//Cards animation
+.card-box {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.cardFront {
+  position: absolute;
+}
+
+.cardFront, .cardBack {
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+}
+
+.cardFront {
+  transition: all .3s linear;
+  transform: rotateY(-180deg);
+}
+
+.cardBack {
+  z-index: 2;
+  transition: all .3s linear;
+}
+
+.rotateFront {
+  transform: rotateY(-360deg);
+}
+
+.rotateBack {
+  transform: rotateY(-180deg);
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.none {
+  visibility: hidden;
+}
+
+@media (max-width: 1400px) {
+  .card-hard {
+    grid-template-columns: repeat(5, 70px);
+  }
+}
+
+@media (max-width: 750px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .card-easy {
+    grid-template-columns: repeat(3, 70px);
+  }
+  .card-medium {
+    grid-template-columns: repeat(4, 60px);
+  }
+  .card-hard {
+    grid-template-columns: repeat(5, 50px);
+  }
+}
+
+

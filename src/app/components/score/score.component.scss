@@ -1,0 +1,58 @@
+@import "../../../../public/colors.scss";
+
+section {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  text-align: center;
+  height: 100%;
+  grid-template-rows: 10rem repeat(2, 5rem)  15rem;
+  background-color: $secondary;
+  color: white;
+}
+
+span {
+  visibility: hidden;
+}
+
+h1 {
+  font-size: 2rem;
+
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+a {
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+
+  &:hover {
+    color: $background;
+
+    span {
+      color: $background;
+      visibility: visible;
+    }
+  }
+}
+
+.green {
+  color: $easy;
+}
+
+.orange {
+  color: $medium;
+}
+
+.red {
+  color: $hard;
+}

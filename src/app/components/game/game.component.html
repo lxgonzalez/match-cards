@@ -1,0 +1,31 @@
+<section>
+  <header>
+    <h1>MATCH-CARDS</h1>
+  </header>
+
+  <main class="cards"
+        [ngClass]="{ 'card-easy': this.levelSelected().text === 'EASY', 'card-medium': this.levelSelected().text === 'MEDIUM', 'card-hard': this.levelSelected().text === 'HARD' }">
+
+    @if (this.cards()) {
+      @if (this.cards()) {
+        @for (c of this.cards(); track c) {
+          <div class="card-box" [class]="c.card + '-box'" (click)="hidden(c)">
+            <img [src]="c.extension" alt="" [class]="c.card + '-front'"
+                 class="cardFront"
+            />
+            <img src="cards/back.jpg" alt="" [class]="c.card + '-back'"
+                 class="cardBack"
+            />
+          </div>
+        }
+      }
+    }
+
+  </main>
+  <footer>
+    <p>{{ this.success() }}/{{ this.levelSelected().cards }}</p>
+    <p>{{ this.levelSelected().text }} MODE</p>
+    <p>{{ this.time() | date:'mm:ss' }}</p>
+  </footer>
+
+</section>

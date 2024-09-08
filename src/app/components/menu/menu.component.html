@@ -1,0 +1,15 @@
+<section>
+  <div class="title">
+    <h1>MATCH-CARDS</h1>
+  </div>
+  <div class="options">
+    @if (levels.length > 0) {
+      @for (level of levels; track level) {
+        <a (click)="changeLevel(level)"
+                [routerLink]="['game']">
+          <span>-></span> {{ level.text }} <span><-</span>
+        </a>
+      }
+    }
+  </div>
+</section>
