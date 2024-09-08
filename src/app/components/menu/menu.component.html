@@ -6,7 +6,7 @@
     @if (levels.length > 0) {
       @for (level of levels; track level) {
         <a (click)="changeLevel(level)"
-                [routerLink]="['/game']">
+                [routerLink]="['game']">
           <span>-></span> {{ level.text }} <span><-</span>
         </a>
       }
