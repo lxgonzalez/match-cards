@@ -3,6 +3,7 @@ import {GameService} from "../../service/game.service";
 import {Level} from "../../models/level";
 import {card} from "../../models/card";
 import {Router, RouterLink} from "@angular/router";
+import {slideInAnimation} from "../../animations/route-transition";
 
 @Component({
   selector: 'app-menu',
@@ -12,6 +13,7 @@ import {Router, RouterLink} from "@angular/router";
   ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
+  animations: [slideInAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MenuComponent {

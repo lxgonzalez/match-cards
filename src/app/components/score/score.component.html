@@ -3,5 +3,5 @@
   <h2>Score</h2>
   <p [ngClass]="{ 'green': score() >= 75, 'orange': score() >= 33 && score() < 75, 'red': score() < 33 }">
     {{ score() | number:'1.0-0' }} %</p>
-  <a href="/"><span>-></span> Play Again <span><-</span></a>
+  <a [routerLink]="['/']"><span>-></span> Play Again <span><-</span></a>
 </section>

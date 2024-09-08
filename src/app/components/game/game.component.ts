@@ -3,6 +3,7 @@ import {GameService} from "../../service/game.service";
 import {DatePipe, DecimalPipe, JsonPipe, NgClass, NgOptimizedImage, NgStyle} from "@angular/common";
 import {card} from "../../models/card";
 import {Router} from "@angular/router";
+import {slideInAnimation} from "../../animations/route-transition";
 
 @Component({
   selector: 'app-game',
@@ -17,6 +18,7 @@ import {Router} from "@angular/router";
   ],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss',
+  animations: [slideInAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GameComponent implements OnInit {
